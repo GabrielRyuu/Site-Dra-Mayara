@@ -1,718 +1,521 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-/* Estilos para o topo do site */
-.top-bar {
-    background-color: #007bff; /* Cor de fundo vibrante */
-    color: white;
-    font-size: 1.1em;
-    padding: 10px 0;
-}
-
-.top-bar .container {
+/* Estilo do cabeçalho */
+header {
+    background-color: #f8f9fa;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info {
-    font-size: 1em;
+header .logo {
+    flex: 0 1 auto; /* Logo ocupa apenas o espaço necessário */
+}
+
+header img {
+    max-height: 50px;
+}
+
+/* Estilos para o menu no desktop */
+nav {
     display: flex;
     gap: 20px;
-    color: #fff;
 }
 
-.contact-info span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: white;
+nav a {
     text-decoration: none;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #ffdf00; /* Cor amarela no hover */
-}
-
-/* Estilização das redes sociais (usando FontAwesome) */
-.social-icon {
-    display: inline-block;
-    font-size: 1.8em;
-}
-
-.social-icon:hover {
-    transform: scale(1.2); /* Efeito de zoom nas redes sociais */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .top-bar .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info {
-        margin-bottom: 15px;
-        justify-content: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-
-
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .top-bar .container, .main-header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info, .social-icons {
-        flex: none;
-        margin-bottom: 15px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        font-size: 1.2em;
-    }
-
-    .logo {
-        margin-bottom: 15px;
-    }
-
-    nav ul li a {
-        padding: 10px 20px;
-    }
-}
-
-
-nav ul li a:hover {
-    color: #ffffff;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    text-align: center;
-}
-
-section {
-    padding: 40px 0;
-    margin: 20px 0;
-}
-
-.sobre, .servicos, .contato {
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 30px 20px;
-}
-
-.servicos ul {
-    list-style: none;
-    padding: 0;
-}
-
-.servicos ul li {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.contato a.whatsapp-btn {
-    display: inline-block;
-    margin-top: 20px;
-    background: #25d366;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 25px;
+    color: #495057;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
-}
-
-.contato a.whatsapp-btn:hover {
-    background: #1ebe57;
-}
-
-.contato a.whatsapp-btn img {
-    width: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-footer {
-    background: #241a06c4;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9em;
-}
-
-
-/* Ajustes no topo do site */
-.top-bar {
-    background: #251507;
-    color: white;
-    font-size: 0.9em;
-    padding: 10px 0;
-}
-
-.top-bar .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.contact-info {
-    flex: 1;
-}
-
-.social-icons {
-    flex: 1;
-    text-align: right;
-}
-
-.social-icons a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 1.2em;
-}
-
-/* Estilo para o cabeçalho principal */
-.main-header {
-    background: #f4f4f4;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.main-header .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    max-width: 150px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1em;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #007bff;
 }
 
-/* WhatsApp Button */
-.whatsapp-btn {
-    display: inline-block;
-    margin-top: 20px;
-    background: #25d366;
+/* Botão "Agendar Consulta" */
+.btn-agendar {
+    background-color: #28A745;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 25px;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
+    border-radius: 20px;
+    transition: background-color 0.3s;
 }
 
-.whatsapp-btn:hover {
-    background: #1ebe57;
+.btn-agendar:hover {
+    background-color: #218838;
 }
 
-.whatsapp-btn img {
-    width: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .top-bar .container, .main-header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    .social-icons {
-        text-align: center;
-        margin-top: 10px;
-    }
-}
-
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-h2 {
-    text-align: center;
-    margin: 20px 0;
-    color: #333;
-}
-
-
-
-
-
-.sobre {
-    background-color: #f4f4f9;
-    padding: 50px 0;
-}
-
-.sobre .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.sobre-conteudo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.sobre-texto {
-    flex: 1;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
-
-.sobre-texto h2 {
-    font-size: 2.5rem;
-    color: #007acc;
-    margin-bottom: 20px;
-}
-
-.sobre-texto p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.sobre-texto .btn-agendar {
-    display: inline-block;
-    background-color: #007acc;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.sobre-texto .btn-agendar:hover {
-    background-color: #005f8c;
-}
-
-.sobre-imagem {
-    flex: 1;
+/* Ajustes gerais para centralização e alinhamento */
+section {
+    padding: 40px 20px;
     text-align: center;
 }
 
-.sobre-imagem img {
-    width: 100%;
-    max-width: 500px;
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo da imagem da seção "Sobre" */
+.sobre-img {
+    width: 1600%;
+    max-width: 750px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 768px) {
-    .sobre-conteudo {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .sobre-texto {
-        margin-bottom: 20px;
-    }
+#sobre {
+    text-align: center;
+    padding: 20px;
+}
 
-    .sobre-imagem img {
+/* Estilos para a seção de avaliações */
+.avaliacoes-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%; /* Ajuste para ocupar toda a largura disponível */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#slide-container {
+    width: 100%; /* Ajuste para largura total do container */
+    max-width: 800px; /* Limita a largura máxima do slide */
+    margin: auto; /* Centraliza o container na página */
+    position: relative; /* Para posicionar os botões de navegação corretamente */
+}
+
+.avaliacoes {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.avaliacao-img {
+    width: 100%; /* Ajuste para garantir que a imagem ocupe 100% do container */
+    max-width: 900px; /* Define um tamanho máximo para evitar que fique muito grande */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que a imagem seja exibida corretamente */
+    margin: 0 auto; /* Centraliza a imagem no container */
+}
+
+/* Estilo dos botões de navegação */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #B89C5A;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/* Botão esquerdo */
+.left-btn {
+    left: -20px; /* Ajuste aqui a distância da borda esquerda da imagem */
+}
+
+/* Botão direito */
+.right-btn {
+    right: -20px; /* Ajuste aqui a distância da borda direita da imagem */
+}
+
+.nav-btn:hover {
+    background: #a0844c;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .avaliacoes-container {
         max-width: 100%;
     }
+
+    #slide-container {
+        width: 100%;
+    }
+
+    .avaliacao-img {
+        width: 100%; /* Assegura que a imagem ocupe a largura total do container */
+        max-width: 100%; /* Garante que a imagem se ajuste à largura da tela */
+    }
+
+    /* Ajustes para os botões de navegação */
+    .nav-btn {
+        top: 40%; /* Ajuste da posição vertical para manter os botões visíveis */
+        padding: 8px 12px; /* Reduz o tamanho do botão no mobile */
+    }
+
+    .left-btn {
+        left: 10px; /* Ajusta o botão esquerdo */
+    }
+
+    .right-btn {
+        right: 10px; /* Ajusta o botão direito */
+    }
+}
+
+.nav-btn:hover {
+    background: #a0844c;
 }
 
 
 
-.contato {
-    background-color: #f9f9f9; /* Fundo suave para contraste */
-    padding: 60px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor da seção */
-}
-
-.contato .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+/* Estilo para a seção de serviços */
+.services-section {
+    padding: 50px 20px;
     text-align: center;
+    background-color: #0F1933; /* Fundo azul escuro */
+    color: #fff;
 }
 
-.contato h2 {
+.services-section h2 {
     font-size: 2.5rem;
-    color: #007acc;
-    margin-bottom: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.contato p {
-    font-size: 1.2rem;
-    color: #666;
+    color: #B89C5A; /* Dourado */
     margin-bottom: 30px;
 }
 
-.contato-info {
+.services-container {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    margin-bottom: 40px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.info-item {
-    background-color: #ffffff;
-    padding: 30px;
+.service-card {
+    background-color: #fff;
+    color: #333;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra nas informações */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
     text-align: center;
-    flex: 1;
+    overflow: hidden;
+}
+
+/* Estilo para o card de serviço (Ortodontia) com imagem maior */
+/* Ajustando imagens dos cards para um padrão */
+.service-card img {
+    width: 100%;
+    height: 220px; /* Altura padrão para todas as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+    border-bottom: 2px solid #ddd; /* Linha separadora */
+}
+
+
+/* Ajustes de layout para o card de serviço */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.info-item:hover {
-    transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+.service-card:hover {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
 }
 
-.info-item h3 {
+/* Card de serviço com texto e botão */
+.service-card h3 {
     font-size: 1.5rem;
-    color: #007acc;
+    margin: 15px 0;
+}
+
+.service-card p {
+    font-size: 1rem;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.service-card button {
+    background-color: #0F1933;
+    color: #fff;
+    border: 2px solid #B89C5A;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.service-card button:hover {
+    background-color: #B89C5A;
+    color: #0F1933;
+}
+
+
+/* Estilos para o menu no mobile */
+.menu-toggle {
+    display: block;
+    position: absolute;
+    left: 10px; /* Encosta o botão no lado esquerdo */
+    top: 15px;
+}
+
+
+.menu-toggle span {
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(10, 6, 255);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #B89C5A; /* Dourado */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Garantir que o logo e menu fiquem lado a lado */
+        justify-content: space-between; /* Espaço entre logo e menu */
+        align-items: center;
+    }
+
+    .logo {
+        flex: 0; /* Logo não irá expandir */
+    }
+
+    nav {
+        display: flex;
+        gap: 10px;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .btn-agendar {
+        display: block;
+        margin: 10px auto; /* Centraliza o botão */
+    }
+
+    .sobre-img {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .service-card button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Exibe o menu quando o botão de menu for clicado */
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Estilo para a seção de contato */
+/* Ajustes gerais para a seção de contato */
+.contact {
+    background-color: #fdfdfd;
+    color: #333;
+    padding: 20px;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem; /* Diminuir o tamanho geral da fonte */
+}
+
+.contact h2 {
+    font-size: 1.5rem; /* Ajuste do tamanho do título */
+    color: #B89C5A;
     margin-bottom: 10px;
 }
 
-.info-item p {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.contato-botao {
-    margin-top: 20px;
-}
-
-.contato-botao .btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do botão */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    letter-spacing: 1px;
-}
-
-.contato-botao .btn-whatsapp:hover {
-    background-color: #128C7E; /* Cor do botão ao passar o mouse */
-    transform: scale(1.05); /* Efeito de aumento do botão */
-}
-
-.contato-botao .btn-whatsapp img {
-    margin-right: 10px;
-    width: 30px;
-    height: auto;
-}
-
-@media screen and (max-width: 768px) {
-    .contato-info {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .info-item {
-        margin-bottom: 20px;
-        box-shadow: none; /* Remover sombra em telas menores */
-    }
-
-    .contato-botao .btn-whatsapp {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-/* Estilos para a seção de serviços */
-.servicos {
-    background-color: #f9f9f9;
-    padding: 60px 0;
-}
-
-.servicos .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    text-align: center;
-}
-
-.servicos h2 {
-    font-size: 2.5rem;
-    color: #1186b4;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-.servicos-lista {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.servico-item {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1 1 30%;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.servico-item:hover {
-    transform: translateY(-10px); /* Efeito de elevação */
-}
-
-.servico-item h3 {
-    font-size: 1.8rem;
-    color: #007acc;
-    margin-bottom: 15px;
-}
-
-.servico-item p {
-    font-size: 1.1rem;
+.contact p {
+    margin: 5px 0 15px 0;
+    font-size: 1rem;
     color: #666;
-    line-height: 1.6;
 }
 
-/* Responsividade: Ajuste para telas menores */
-@media (max-width: 768px) {
-    .servicos-lista {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .servico-item {
-        flex: 1 1 100%;
-    }
+.contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
 }
 
-
-.main-header {
-    display: grid;
-    grid-template-columns: 1fr auto; /* Logotipo ocupa 1 fração e menu se adapta */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f4f4f4;
-    color: white;
+.contact ul li {
+    margin: 5px 0;
+    font-size: 0.9rem; /* Ajustar o tamanho dos itens */
 }
 
-.main-header .logo {
-    max-width: 150px;
-}
-
-.main-header .nav {
-    display: flex;
-    gap: 20px;
-}
-
-.main-header .nav a {
-    color: white;
-    text-decoration: none;
-}
-
-
-.servicos-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta as colunas */
-    gap: 20px;
-    padding: 20px;
-}
-
-.servico-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.servico-item:hover {
-    transform: translateY(-10px);
-}
-
-
-.slider-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adapta ao tamanho da tela */
-    gap: 15px;
-}
-
-.slider-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-
-
-
-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
-footer div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-footer a {
+.contact ul li a {
     color: #007bff;
     text-decoration: none;
 }
 
-
-
-/* CSS */
-.sobre-imagem img {
-    max-width: 90%;
-    width: 400px; /* Define largura específica */
-    height: auto; /* Mantém a proporção */
-    border-radius: 20px; /* Deixa os cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-    display: block; /* Garante alinhamento */
-    margin: 0 auto; /* Centraliza */
+.contact ul li a:hover {
+    text-decoration: underline;
 }
 
-.sobre-imagem {
-    text-align: center;
-    padding: 20px;
+/* Ajustes para o rodapé */
+
+
+/* Container principal para alinhar os elementos */
+/* Container principal com espaçamento ajustado */
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; /* Espaçamento entre as colunas */
+    padding: 40px 20px; /* Aumentar espaçamento vertical para mais destaque */
+    background-color: #f9f9f9; /* Adicionar um fundo suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adicionar sombra sutil */
 }
 
+/* Informações da empresa */
+.company-info {
+    width: 35%; /* Aumentar largura */
+}
 
-img {
-    margin: 0;
+.company-info h2 {
+    font-size: 1.8rem; /* Aumentar tamanho do título */
+    color: #B89C5A;
+    margin-bottom: 15px;
+}
+
+.company-info p {
+    font-size: 1rem; /* Texto mais visível */
+    color: #444; /* Cor mais contrastante */
+}
+
+/* Tratamentos */
+.treatments {
+    width: 30%; /* Ajuste proporcional */
+}
+
+.treatments h3 {
+    font-size: 1.5rem; /* Tamanho maior do título */
+    color: #B89C5A;
+    margin-bottom: 10px;
+}
+
+.treatments ul {
+    list-style: none;
     padding: 0;
 }
 
-
-.galeria {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-}
-
-.galeria h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.galeria p {
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 40px;
-}
-
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.galeria-item {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.galeria-item img {
-    max-width: 100%;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.galeria-item img:hover {
-    transform: scale(1.05);
-}
-
-.galeria-item p {
-    margin-top: 10px;
-    font-size: 1em;
+.treatments ul li {
+    font-size: 1rem; /* Aumentar tamanho do texto */
+    margin-bottom: 8px; /* Mais espaçamento entre itens */
     color: #333;
+}
+
+/* Horário de Funcionamento */
+.working-hours {
+    width: 25%; /* Ajustar largura menor */
+    text-align: left; /* Alinhar à esquerda */
+    margin-top: 10px; /* Aproximar-se dos outros itens */
+}
+
+.working-hours h3 {
+    font-size: 1.5rem; /* Tamanho maior do título */
+    color: #B89C5A;
+    margin-bottom: 10px;
+}
+
+.working-hours ul {
+    list-style: none;
+    padding: 0;
+}
+
+.working-hours ul li {
+    font-size: 1rem; /* Texto mais visível */
+    margin-bottom: 8px; /* Espaçamento maior entre itens */
+    color: #333;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .footer-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px; /* Menor espaçamento */
+    }
+
+    .company-info,
+    .treatments,
+    .working-hours {
+        width: 100%; /* Largura total */
+        text-align: left; /* Tudo alinhado à esquerda */
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #B89C5A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a0844c;
 }
