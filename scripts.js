@@ -1,30 +1,42 @@
-let currentIndex = 0;
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
 
-const images = document.querySelectorAll('.slider-images img');
-const totalImages = images.length;
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+// Quando o botão de menu for clicado
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.caixa').classList.toggle('active');
+});
 
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
+let currentSlide = 0;
+const slides = document.querySelectorAll('.avaliacao-img');
 
-function updateSlider() {
-    const newTransformValue = -(currentIndex * 100); // Move o slider para a posição da imagem
-    document.querySelector('.slider-images').style.transform = `translateX(${newTransformValue}%)`;
+function showSlide(index) {
+    // Garantir que o índice está dentro dos limites
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    // Esconder todas as imagens
+    slides.forEach(slide => slide.style.display = 'none');
+
+    // Mostrar a imagem atual
+    slides[currentSlide].style.display = 'block';
+}
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
 }
 
-nextButton.addEventListener('click', function() {
-    if (currentIndex < totalImages - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Voltar para a primeira imagem
-    }
-    updateSlider();
-});
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
 
-prevButton.addEventListener('click', function() {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = totalImages - 1; // Voltar para a última imagem
-    }
-    updateSlider();
-});
+// Exibe o primeiro slide ao carregar a página
+showSlide(currentSlide);
