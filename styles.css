@@ -537,6 +537,39 @@ nav a:hover {
     }
 }
 
+
+/* Ajuste para as setas no mobile */
+@media (max-width: 768px) {
+    .nav-btn {
+        top: 50%; /* Centraliza as setas verticalmente no slider */
+        transform: translateY(-50%);
+        width: 40px; /* Tamanho ajustado para toque no mobile */
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para destaque */
+        border-radius: 50%; /* Formato circular */
+        color: white; /* Cor do ícone */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Garante que fiquem acima do conteúdo */
+    }
+
+    .left-btn {
+        left: 10px; /* Posiciona a seta esquerda próximo à borda da tela */
+    }
+
+    .right-btn {
+        right: 10px; /* Posiciona a seta direita próximo à borda da tela */
+    }
+
+    .slider-container {
+        overflow: hidden; /* Evita rolagem horizontal */
+        position: relative;
+    }
+}
+
+
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
