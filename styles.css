@@ -327,7 +327,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: rgb(10, 6, 255);
+    color: #0a06ff;
     font-weight: bold;
     transition: color 0.3s;
 }
