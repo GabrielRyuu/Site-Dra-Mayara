@@ -241,88 +241,106 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Meu Projeto</title>
-        <style>
-            /* Estilos do formulário para WhatsApp */
-            .form-container {
-                margin-top: 40px;
-            }
-            .form-container form {
-                max-width: 400px;
-                margin: auto;
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            .form-container label {
-                font-weight: bold;
-                display: block;
-                margin-bottom: 8px;
-            }
-            .form-container input,
-            .form-container textarea,
-            .form-container button {
-                width: 100%;
-                margin-bottom: 15px;
-                padding: 10px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-            .form-container button {
-                background-color: #28a745;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-            .form-container button:hover {
-                background-color: #218838;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div id="menu-toggle"></div>
-            <nav id="nav-menu" class="nav-menu">
-                <!-- Itens do menu -->
-            </nav>
-        </header>
-        
-        <main>
-            <section class="form-container">
-                <h1>Agende Sua Consulta</h1>
-                <form id="whatsappForm">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" placeholder="Digite seu nome" required>
-            
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" rows="4" placeholder="Exemplo: Gostaria de agendar uma consulta" required></textarea>
-            
-                    <button type="submit">Enviar pelo WhatsApp</button>
-                </form>
-            </section>
-            
-            <script>
-                document.getElementById('whatsappForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-            
-                    // Obtém os dados do formulário
-                    const name = encodeURIComponent(document.getElementById('name').value.trim());
-                    const message = encodeURIComponent(document.getElementById('message').value.trim());
-            
-                    if (!name || !message) {
-                        alert('Por favor, preencha todos os campos.');
-                        return;
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu Projeto</title>
+            <style>
+                /* Estilos do formulário para WhatsApp */
+                .form-container {
+                    margin: 40px auto;
+                    max-width: 400px;
+                    padding: 20px;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                }
+                .form-container label {
+                    font-weight: bold;
+                    display: block;
+                    margin-bottom: 8px;
+                }
+                .form-container input,
+                .form-container textarea,
+                .form-container button {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    box-sizing: border-box; /* Evita problemas de largura */
+                }
+                .form-container button {
+                    background-color: #28a745;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                }
+                .form-container button:hover {
+                    background-color: #218838;
+                }
+                #previewMessage {
+                    background: #f8f9fa;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                }
+            </style>
+        </head>
+        <body>
+            <main>
+                <section class="form-container">
+                    <h1>Agende Sua Consulta</h1>
+                    <form id="whatsappForm">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" placeholder="Digite seu nome" required>
+                
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" rows="4" placeholder="Exemplo: Gostaria de agendar uma consulta" oninput="updatePreview()" required></textarea>
+                
+                        <p><strong>Prévia da mensagem:</strong></p>
+                        <div id="previewMessage">
+                            Olá, meu nome é <span id="previewName">[Seu Nome]</span>. Gostaria de <span id="previewContent">[Sua Mensagem]</span>.
+                        </div>
+                
+                        <button type="submit">Enviar pelo WhatsApp</button>
+                    </form>
+                </section>
+                
+                <script>
+                    document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                
+                        // Obtém os dados do formulário
+                        const name = encodeURIComponent(document.getElementById('name').value.trim());
+                        const message = encodeURIComponent(document.getElementById('message').value.trim());
+                
+                        if (!name || !message) {
+                            alert('Por favor, preencha todos os campos.');
+                            return;
+                        }
+                
+                        // Gerar URL do WhatsApp
+                        const whatsappURL = `https://api.whatsapp.com/message/X4F6WOIUNWMDH1?autoload=1&app_absent=0&text=Olá,%20meu%20nome%20é%20${name}.%20${message}`;
+                        window.open(whatsappURL, '_blank');
+                    });
+                
+                    // Atualiza a prévia em tempo real
+                    function updatePreview() {
+                        const name = document.getElementById('name').value.trim() || '[Seu Nome]';
+                        const message = document.getElementById('message').value.trim() || '[Sua Mensagem]';
+                
+                        document.getElementById('previewName').textContent = name;
+                        document.getElementById('previewContent').textContent = message;
                     }
-            
-                    // Gerar URL do WhatsApp
-                    const whatsappURL = `https://api.whatsapp.com/message/X4F6WOIUNWMDH1?autoload=1&app_absent=0&text=Olá,%20meu%20nome%20é%20${name}.%20${message}`;
-                    window.open(whatsappURL, '_blank');
-                });
-            </script>
-        </main>
-    </body>
-    </html>
-    
+                </script>
+            </main>
+        </body>
+        </html>
+        
         
 
 
